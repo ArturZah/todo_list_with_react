@@ -1,7 +1,7 @@
 .todo-item {
     background-color: #f4f4f4;
     border-bottom: 1px dotted #777;
-    padding: 5px;
+    padding: 10px;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -11,13 +11,18 @@
     margin: auto 10px;
 }
 
-.btn {
+.todo-item:last-child {
+    border-bottom: 1px solid #333;
+}
+
+.del-btn {
     background-color: #ff0000;
     color: #fff;
     border: none;
     padding: 5px 9px;
     border-radius: 50%;
     margin-right: 10px;
+    cursor: pointer;
 }
 
 .flex {

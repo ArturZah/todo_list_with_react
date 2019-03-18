@@ -13,3 +13,19 @@ a {
   color: #333;
   text-decoration: none;
 }
+
+.App {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.main-cnt {
+  width: 70%;
+  margin-top: 50px;
+  border-left: 1px solid #333; 
+  border-right: 1px solid #333; 
+  -webkit-box-shadow: 4px 4px 33px -9px rgba(0,0,0,0.25);
+  -moz-box-shadow: 4px 4px 33px -9px rgba(0,0,0,0.25);
+  box-shadow: 4px 4px 33px -9px rgba(0,0,0,0.25);
+}
