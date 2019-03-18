@@ -3,12 +3,12 @@ import TodoItem from './TodoItem';
 import PropTypes from 'prop-types';
 
 class Todos extends Component {
+
   render() {
-    
     //Loop przez state w app.js
     return this.props.todos.map((todo) => (
         //przekazanie prop do todoitem.. przy stosowaniu map() należy podać unikatową wartość dla key. Najlepiej ID.
-        <TodoItem key={todo.id} todo={todo}/>
+        <TodoItem key={todo.id} todo={todo} markComplete={this.props.markComplete}/>
     ));
   }
 }
