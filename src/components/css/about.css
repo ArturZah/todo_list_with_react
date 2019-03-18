@@ -1,0 +1,14 @@
+.about-cnt {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 300px;
+  text-align: justify;
+  border-bottom: 1px solid #333;
+  padding: 20px;
+}
+
+.about-cnt h1 {
+  margin-bottom: 40px;
+}
