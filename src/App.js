@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { BrowserRouter as Router, Route} from 'react-router-dom';
+import axios from 'axios';
 import Todos from './components/Todos';
 import AddTodo from './components/AddTodo';
 import Header from './components/layout/Header';
@@ -10,23 +11,13 @@ import './components/css/App.css';
 class App extends Component {
 
   state = {
-    todos: [
-      {
-        id: 1,
-        title: 'Take out the trash',
-        completed: false
-      },
-      {
-        id: 2,
-        title: 'Make a dinner',
-        completed: false
-      },
-      {
-        id: 3,
-        title: 'Clean a room',
-        completed: false
-      }
-    ]
+    todos: []
+  }
+
+  //Take data from API
+  componentDidMount() {
+    axios.get('https://jsonplaceholder.typicode.com/todos?_limit=5')
+      .then(res => this.setState({ todos: res.data }))
   }
 
   //Toggle Complete 
@@ -41,7 +32,9 @@ class App extends Component {
 
   //Delete Todo
   delTodo = (id) => {
-    this.setState({ todos: [...this.state.todos.filter(todo => todo.id !== id)] })
+
+    axios.delete(`https://jsonplaceholder.typicode.com/todos/${id}`)
+      .then(res => this.setState({ todos: [...this.state.todos.filter(todo => todo.id !== id)] }))
   }
 
   //Add Todo
