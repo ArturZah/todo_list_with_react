@@ -8,7 +8,7 @@ class Todos extends Component {
     //Loop przez state w app.js
     return this.props.todos.map((todo) => (
         //przekazanie prop do todoitem.. przy stosowaniu map() należy podać unikatową wartość dla key. Najlepiej ID.
-        <TodoItem key={todo.id} todo={todo} markComplete={this.props.markComplete}/>
+        <TodoItem key={ todo.id } todo={ todo } markComplete={ this.props.markComplete } delTodo={ this.props.delTodo }/>
     ));
   }
 }
